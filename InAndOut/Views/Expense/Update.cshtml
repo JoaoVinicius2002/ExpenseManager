@@ -1,0 +1,46 @@
+﻿@using InAndOut.Models.ViewModels
+@model ExpenseViewModel
+<form method="post" asp-action="Update">
+    <input asp-for="Expense.Id" hidden />
+    <div class="p-3">
+        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Delete Expense</h2>
+        </div>
+        <row class="col-12">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Expense.Name"></label>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Expense.Amount"></label>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Expense.ExpenseType"></label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <input class="w-100" asp-for="Expense.Name" />
+                </div>
+                <div class="col-4">
+                    <input class="w-100" asp-for="Expense.Amount" />
+                </div>
+                <div class="col-4">
+                    <select class="form-control" asp-items="Model.TypeDropDown" asp-for="Expense.ExpenseTypeId">
+                        <option selected> --Select Expense Type</option>
+                    </select>
+                    <span asp-validation-for="Expense.ExpenseTypeId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-6 offset-1 row">
+                <div class="col">
+                    <input type="submit" class="btn btn-danger w-75" value="Update" />
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-success w-75">Back</a>
+                </div>
+            </div>
+        </row>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+﻿@using InAndOut.Models.ViewModels
+@model ExpenseViewModel
+<form method="post" asp-action="Create">
+    <div class="p-3">
+        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Create a new Expense</h2>
+        </div>
+        <row class="col-12">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Expense.Name"></label>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Expense.Amount"></label>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Expense.ExpenseType"></label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <input class="form-control" asp-for="Expense.Name" />
+                    <span asp-validation-for="Expense.Name" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <input class="form-control" asp-for="Expense.Amount" />
+                    <span asp-validation-for="Expense.Amount" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <select class="form-control" asp-items="Model.TypeDropDown" asp-for="Expense.ExpenseTypeId">
+                        <option selected> --Select Expense Type</option>
+                    </select>
+                    <span asp-validation-for="Expense.ExpenseTypeId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-6 offset-1 row">
+                <div class="col">
+                    <input type="submit" class="btn btn-info w-75" value="create" />
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-danger w-75">Index</a>
+                </div>
+            </div>
+        </row>
+    </div>
+</form>
+
+@section Scripts{ 
+@{ 
+    <partial name="_ValidationScriptsPartial.cshtml" />}
+}
