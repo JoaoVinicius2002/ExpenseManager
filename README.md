@@ -6,3 +6,8 @@ It was really nice to build this app, in the Expense CRUD was added a property n
 
 Thanks for reading, 
 It's a simple project that was made easily just to execute some .NET Core concepts.
+
+Expense List:
+![image](https://user-images.githubusercontent.com/66966967/136130914-34864909-c7a9-4284-948c-fc2ba78fdaf4.png)
+Expense Type List: 
+![image](https://user-images.githubusercontent.com/66966967/136130944-abf9596d-e3e7-43da-bb92-4e6a79072b2b.png)
